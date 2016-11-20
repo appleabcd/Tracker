@@ -10,6 +10,8 @@
 #import "DetailViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <CoreLocation/CoreLocation.h>
+#import <AFNetworking/AFURLSessionManager.h>
+
 @interface MasterViewController ()
 @end
 @interface UIViewController () <UIPopoverPresentationControllerDelegate>
@@ -20,6 +22,8 @@
 UIImageView *_busView;
 GMSMarker *mbus;
 BOOL btr,rtb;
+
+
 
 UIViewController *ViewMenu;
 
@@ -57,6 +61,20 @@ UIViewController *ViewMenu;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:@"http://119.235.255.139:8080/gpstrackingapp/api/vehicle/all"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        NSLog(@"File downloaded to: %@", filePath);
+    }];
+    [downloadTask resume];
     
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]
     initWithTitle:@"Rute"
