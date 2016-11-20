@@ -34,6 +34,7 @@
 		563189D11D8E7A4900588E9B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563189D01D8E7A4900588E9B /* CoreLocation.framework */; };
 		563189D31D8E7A5900588E9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563189D21D8E7A5900588E9B /* CoreGraphics.framework */; };
 		563189D51D8E7A5F00588E9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563189D41D8E7A5F00588E9B /* CoreData.framework */; };
+		AE9751FF1DE18286006CB9F9 /* Splashscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE9751FE1DE18286006CB9F9 /* Splashscreen.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		563189D01D8E7A4900588E9B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		563189D21D8E7A5900588E9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		563189D41D8E7A5F00588E9B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AE9751FE1DE18286006CB9F9 /* Splashscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Splashscreen.jpg; path = Tracker/Assets/Images/Splashscreen.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		5631896D1D8E75EE00588E9B = {
 			isa = PBXGroup;
 			children = (
+				AE9751FC1DE18273006CB9F9 /* Assets */,
 				563189D41D8E7A5F00588E9B /* CoreData.framework */,
 				563189D21D8E7A5900588E9B /* CoreGraphics.framework */,
 				563189D01D8E7A4900588E9B /* CoreLocation.framework */,
@@ -215,6 +218,22 @@
 			path = TrackerUITests;
 			sourceTree = "<group>";
 		};
+		AE9751FC1DE18273006CB9F9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AE9751FD1DE18277006CB9F9 /* Images */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		AE9751FD1DE18277006CB9F9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AE9751FE1DE18286006CB9F9 /* Splashscreen.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,7 +302,7 @@
 					563189751D8E75EE00588E9B = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = LT5EQT97YY;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					563189941D8E75EE00588E9B = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -321,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5631898F1D8E75EE00588E9B /* LaunchScreen.storyboard in Resources */,
+				AE9751FF1DE18286006CB9F9 /* Splashscreen.jpg in Resources */,
 				5631898C1D8E75EE00588E9B /* Assets.xcassets in Resources */,
 				5631898A1D8E75EE00588E9B /* Main.storyboard in Resources */,
 				563189BB1D8E790C00588E9B /* GoogleMaps.bundle in Resources */,
@@ -494,7 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LT5EQT97YY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -505,8 +525,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.siptracker.intrans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b80783f9-de55-4afa-b4ee-e8f70554b5f1";
-				PROVISIONING_PROFILE_SPECIFIER = "Bintaro Intrans";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -516,7 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LT5EQT97YY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -527,8 +547,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.siptracker.intrans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b80783f9-de55-4afa-b4ee-e8f70554b5f1";
-				PROVISIONING_PROFILE_SPECIFIER = "Bintaro Intrans";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
